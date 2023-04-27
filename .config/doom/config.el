@@ -6,7 +6,7 @@
 ;; Disable Doom exit prompt
 (setq confirm-kill-emacs nil)
 
-;; Evil-snipe set to visible (will snipe the whole visible space instead of default line)
+;; Evil-snipe set to visible
 (setq evil-snipe-scope 'visible)
 
 ;; Remap ESC to jj
@@ -16,7 +16,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+      user-mail-address "john@doecom")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -30,7 +30,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 17))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
