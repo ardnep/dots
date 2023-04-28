@@ -168,26 +168,26 @@ screens = [
         wallpaper_mode="fill",
 
         # setting up the bar
-        top=bar.Bar(
-            [
-                widget.GroupBox(),
-                widget.WindowName(),
-                widget.CPU(),
-                widget.Memory(
-                    measure_mem="G"
-                    ),
-                widget.Net(interface=["enp2s0f1", "wlp3s0"]),
-                widget.Volume(
-                   emoji=True
-                ),
-                widget.Backlight(backlight_name="intel_backlight"),
-                widget.KeyboardLayout(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.BatteryIcon(),
-            ],
-            30,
-            margin = [5, 5, 0, 5]
-        ),
+        # top=bar.Bar(
+        #     [
+        #         widget.GroupBox(),
+        #         widget.WindowName(),
+        #         widget.CPU(),
+        #         widget.Memory(
+        #             measure_mem="G"
+        #             ),
+        #         widget.Net(interface=["enp2s0f1", "wlp3s0"]),
+        #         widget.Volume(
+        #            emoji=True
+        #         ),
+        #         widget.Backlight(backlight_name="intel_backlight"),
+        #         widget.KeyboardLayout(),
+        #         widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+        #         widget.BatteryIcon(),
+        #     ],
+        #     30,
+        #     margin = [5, 5, 0, 5]
+        # ),
     ),
 ]
 
