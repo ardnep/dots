@@ -10,7 +10,7 @@ else
         device_info=$(bluetoothctl info "$device")
 
         if echo "$device_info" | grep -q "Connected: yes"; then
-            device_alias = $(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+            device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
 
             if [ $connected_devices -gt 0 ]; then
                 printf ", %s" "$device_alias"
@@ -19,10 +19,12 @@ else
             fi
 
             connected_devices=$((connected_devices + 1))
-        else
-            echo "󰂯"
         fi
     done
+
+    if [ $connected_devices == 0 ]; then
+        echo "󰂯"
+    fi
 
     printf '\n'
 fi
