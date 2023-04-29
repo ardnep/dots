@@ -74,6 +74,7 @@ ZSH_THEME="jnrowe"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	vi-mode
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 )
@@ -109,3 +110,9 @@ alias f="ranger"
 alias gpu="__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias bconhead="bluetoothctl connect 00:16:94:2D:2C:FF"
 alias bconair="bluetoothctl connect 98:DD:60:BD:17:3B"
+
+
+# Key bindings
+bindkey -s '\es' '^asudo ^e'
+bindkey -s '\eg' '^agit ^e'
+bindkey -s '\ec' '^asource ^e'
