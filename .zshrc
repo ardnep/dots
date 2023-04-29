@@ -106,3 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias f="ranger"
+alias gpu="__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia"
+alias bconhead="bluetoothctl connect 00:16:94:2D:2C:FF"
+alias bconair="bluetoothctl connect 98:DD:60:BD:17:3B"

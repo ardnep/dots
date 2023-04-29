@@ -26,5 +26,4 @@ else
         echo "󰂯"
     fi
 
-    printf '\n'
 fi
