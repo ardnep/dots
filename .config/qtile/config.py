@@ -59,6 +59,11 @@ keys = [
     Key([mod], "Up", lazy.spawn("pamixer -i 10"), desc="Increase volume by 10%"),
     Key([mod], "Down", lazy.spawn("pamixer -d 10"), desc="Decrease volume by 10%"),
 
+    # Mic input controls
+    Key([mod, "shift"], "Up", lazy.spawn("pamixer --default-source -i 10"), desc="Increase volume by 10%"),
+    Key([mod, "shift"], "Down", lazy.spawn("pamixer --default-source -d 10"), desc="Decrease volume by 10%"),
+    Key([mod, "shift"], "m", lazy.spawn("pamixer --default-source -t"), desc="Decrease volume by 10%"),
+
     # Brightness controls
     Key([mod], "Right", lazy.spawn("brightnessctl s 5%+"), desc="Increase brightness by 5%"),
     Key([mod], "Left", lazy.spawn("brightnessctl s 5%-"), desc="Descrease brightness by 5%"),

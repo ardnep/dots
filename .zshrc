@@ -103,16 +103,20 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias f="ranger"
 alias gpu="__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias bconhead="bluetoothctl connect 00:16:94:2D:2C:FF"
 alias bconair="bluetoothctl connect 98:DD:60:BD:17:3B"
 
-
 # Key bindings
 bindkey -s '\es' '^asudo ^e'
 bindkey -s '\eg' '^agit ^e'
 bindkey -s '\ec' '^asource ^e'
+bindkey -M viins jj vi-cmd-mode
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+
+# VI Mode Settings
+VI_MODE_SET_CURSOR=true
+MODE_INDICATOR="%F{white}N%f"
