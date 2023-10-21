@@ -36,7 +36,8 @@ alt = "mod1"
 terminal = "alacritty"
 browser = "firefox"
 browser_private_window = "firefox -private-window"
-editor= "emacs"
+editor = "emacs"
+screenshot = "flameshot gui"
 
 @hook.subscribe.startup_once
 def autostart():
@@ -54,6 +55,9 @@ def toggleMaxLayout(qtile):
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
+
+    # Screenshot tool
+    Key([mod], "s", lazy.spawn(screenshot), desc="Take a screenshot"),
 
     # Volume controls
     Key([mod], "Up", lazy.spawn("pamixer -i 10"), desc="Increase volume by 10%"),
@@ -113,6 +117,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control", "shift"], "r", lazy.restart(), desc="Restart Qtile"),
+    Key([mod, "control", "shift"], "l", lazy.spawn("dm-tool lock"), desc="Lock the screen"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "space", lazy.spawn("rofi -show combi"), desc="Spawn a command using a prompt widget"),
 ]
