@@ -2,9 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="$PATH:$HOME/.config/emacs/bin/"
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /opt/homebrew/bin/virtualenvwrapper.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,6 +113,8 @@ alias f="ranger"
 alias gpu="__NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias bconhead="bluetoothctl connect 00:16:94:2D:2C:FF"
 alias bconair="bluetoothctl connect 98:DD:60:BD:17:3B"
+alias current="cd /Users/ardnep/Library/Mobile\ Documents/com~apple~CloudDocs/y3s1"
+alias pyvenv="python3 -m venv .venv && source .venv/bin/activate"
 
 # Key bindings
 bindkey -s '\es' '^asudo ^e'
@@ -120,3 +127,14 @@ bindkey -M vicmd 'j' down-line-or-beginning-search
 # VI Mode Settings
 VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%F{white}N%f"
+
+function gac ()
+{
+  git add .
+  if [ "$1" != "" ]
+  then
+    git commit -m "$1"
+  else
+    git commit -m update
+  fi
+}
