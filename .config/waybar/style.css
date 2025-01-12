@@ -1,0 +1,203 @@
+* {
+  font-family: 'Inconsolata Nerd Font', Arial, sans-serif;
+  font-size: 15px;
+}
+
+tooltip {
+  background: @bg;
+  border-color: @bg2;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+window#waybar {
+  background-color: @bg;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 8px;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button:not(.active) label {
+  font-size: 6px;
+}
+
+#workspaces button label {
+  transition-property: font-size;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
+  font-size: 15px;
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  margin: 0;
+  background-color: transparent;
+  color: @text;
+}
+
+#workspaces button.active label {
+  color: @color2;
+  margin-left: -5px;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.urgent label {
+  color: @danger;
+  font-size: 15px;
+  margin-left: -5px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#mpris,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#keyboard-state,
+#custom-swaync,
+#language,
+#privacy-item,
+#custom-updates,
+#custom-nvidia {
+  padding: 0 10px;
+  padding-left: 7px;
+  margin: 5px;
+  border-radius: 10px;
+  color: @text;
+  background-color: @bg2;
+  font-weight: 700;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#mpris:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#keyboard-state:hover,
+#custom-swaync:hover,
+#window:hover,
+#language:hover,
+#custom-nvidia:hover {
+  opacity: 0.8;
+}
+
+window#waybar.empty #workspaces button.active label {
+  color: @text;
+}
+
+window#waybar.fullscreen #workspaces button.active label {
+  color: @danger;
+}
+
+
+#temperature.critical {
+  background-color: @danger;
+  color: @bg;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#custom-swaync.notification {
+  color: @bg;
+  background-color: @warning;
+}
+
+#custom-swaync.dnd-notification {
+  color: @bg;
+  background-color: @danger;
+}
+
+#custom-swaync.dnd-none {
+  color: @danger;
+}
+
+#bluetooth.on {
+  background-color: @warning;
+  color: @bg;
+}
+
+#bluetooth.connected {
+  background-color: @success;
+  color: @bg;
+}
+
+#network.ethernet,
+#network.wifi {
+  background-color: @success;
+  color: @bg;
+}
+
+#network.on {
+  background-color: @warning;
+  color: @bg;
+}
+
+#mpris.playing {
+  background-color: @success;
+  color: @bg;
+}
+
+#mpris.paused {
+  background-color: @warning;
+  color: @bg;
+}
+
+#privacy-item.audio-in {
+  background-color: @success;
+  color: @bg;
+}
+
+#privacy-item.audio-in,
+#privacy-item.audio-in {
+  background-color: @success;
+  color: @bg;
+}
+
+#privacy-item.screenshare {
+  background-color: @warning;
+  color: @bg;
+}
+
+#custom-updates.has-updates {
+  background-color: @warning;
+  color: @bg;
+}

@@ -1,0 +1,17 @@
+@define-color bg #232A2E;
+@define-color bg2 #343F44;
+@define-color fg #D3C6AA;
+@define-color text #B0BCB3;
+
+@define-color danger #E67E80;
+@define-color warning #DBBC7F;
+@define-color success #A7C080;
+
+@define-color color0 #E69875;
+@define-color color1 #DBBC7F;
+@define-color color2 #A7C080;
+@define-color color3 #7FBBB3;
+@define-color color4 #D699B6;
+@define-color color5 #E67E80;
+
+@import '../style.css';

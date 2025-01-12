@@ -1,0 +1,182 @@
+// -*- mode: jsonc -*-
+{
+    "margin": "5 8 0 8",
+    "height": 35, 
+    "spacing": 1, 
+    "modules-left": [
+        "hyprland/window", // hidden
+        "custom/updates",
+        "mpris",
+        "custom/media",
+        "cpu",
+        "temperature#cpu",
+        "custom/nvidia",
+        "memory",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        // "keyboard-state",
+        // "hyprland/language",
+        "tray",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "clock",
+        // "custom/power"
+        "custom/swaync",
+        "privacy"
+    ],
+    // Modules configuration
+    "hyprland/window": {
+      "format": "",
+      "icon-size": 15
+    },
+    "hyprland/language": {
+      "format-en": "en"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "󰩃",
+            "default": ""
+        }
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{icon} {name}",
+        "device-path": "/dev/input/event19",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%H:%M:%S %b %d '%g}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 5
+    },
+    "memory": {
+        "format": "  {used}G | {swapUsed}G"
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 Ethernet",
+        "tooltip-format": "{ifname} ip {ipaddr} via {gwaddr}",
+        "format-disconnected": "⚠ Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "󰟎 {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": ["", "", ""]
+        },
+        "on-click": "pwvucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/nvidia": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1%  \\2°C/g'",
+        "format": "󰛇 {}",
+        "interval": 2
+    },
+    "custom/swaync": {
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱏧<span foreground='red'><sup></sup></span>",
+            "dnd-none": "󱏧",
+            "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": "󱏧"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "bluetooth": {
+      "format-connected": "󰂱 Connected",
+      "tooltip-format-connected": "󰂱 {device_alias}",
+      "format-on": "󰂯 On",
+      "format-off": "󰂲 Off",
+      "on-click": "overskride"
+    },
+    "mpris": {
+      "interval": 1,
+      "status-icons": {
+        "playing": "",
+        "paused": "",
+        "stopped": ""
+      },
+      "title-len": 15,
+      "artist-len": 10,
+      "format": "{status_icon} {title} - {artist}"
+    },
+    "privacy": {
+      "icon-size": 15 
+    },
+    "custom/updates": {
+      "format": "{icon}",
+      "return-type": "json",
+      "format-icons": {
+          "has-updates": "󱍷",
+          "updated": ""
+        },
+      "exec-if": "which waybar-module-pacman-updates",
+      "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output"
+    }
+    
+}
