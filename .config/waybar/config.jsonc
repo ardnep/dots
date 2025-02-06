@@ -6,7 +6,7 @@
     "modules-left": [
         "hyprland/window", // hidden
         "custom/updates",
-        "mpris",
+        // "mpris",
         "custom/media",
         "cpu",
         "temperature#cpu",
