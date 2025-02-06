@@ -133,6 +133,7 @@ function e() {
 alias ls="eza"
 alias cat="bat"
 alias ta="tmux attach"
+alias t="tmux"
 alias drive="cd /media/drive"
 
 # Key bindings
