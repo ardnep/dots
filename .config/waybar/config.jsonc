@@ -1,6 +1,5 @@
 // -*- mode: jsonc -*-
 {
-    "margin": "5 8 0 8",
     "height": 35, 
     "spacing": 1, 
     "modules-left": [
