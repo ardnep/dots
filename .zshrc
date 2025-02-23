@@ -131,7 +131,6 @@ function e() {
     nohup neovide "$@" & disown
 }
 alias ls="eza"
-alias cat="bat"
 alias ta="tmux attach"
 alias t="tmux"
 alias drive="cd /media/drive"
@@ -176,3 +175,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+. "$HOME/.local/bin/env"
