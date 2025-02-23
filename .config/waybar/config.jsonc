@@ -44,8 +44,10 @@
         "format": "{icon}",
         "format-icons": {
             "urgent": "",
-            "active": "󰩃",
             "default": ""
+        },
+        "persistent-workspaces": {
+          "*": 5
         }
     },
     "keyboard-state": {
