@@ -14,7 +14,7 @@ x = 10
 y = 10
 
 [general]
-import = ["~/.config/alacritty/everforest-dark.toml"]
+import = ["~/.config/alacritty/everblush.toml"]
 
 [env]
 TERM = "xterm-256color"
