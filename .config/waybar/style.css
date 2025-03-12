@@ -139,7 +139,7 @@ window#waybar.fullscreen #workspaces button.active label {
 
 #custom-swaync.notification {
   color: @bg;
-  background-color: @warning;
+  background-color: @color2;
 }
 
 #custom-swaync.dnd-notification {
@@ -151,39 +151,24 @@ window#waybar.fullscreen #workspaces button.active label {
   color: @danger;
 }
 
-#bluetooth.on {
-  background-color: @warning;
-  color: @bg;
-}
-
 #bluetooth.connected {
-  background-color: @success;
+  background-color: @color2;
   color: @bg;
 }
 
 #network.ethernet,
 #network.wifi {
-  background-color: @success;
-  color: @bg;
-}
-
-#network.on {
-  background-color: @warning;
+  background-color: @color2;
   color: @bg;
 }
 
 #mpris.playing {
-  background-color: @success;
+  background-color: @color2;
   color: @bg;
 }
 
 #mpris.paused {
   background-color: @warning;
-  color: @bg;
-}
-
-#privacy-item.audio-in {
-  background-color: @success;
   color: @bg;
 }
 
@@ -199,6 +184,6 @@ window#waybar.fullscreen #workspaces button.active label {
 }
 
 #custom-updates.has-updates {
-  background-color: @warning;
+  background-color: @color2;
   color: @bg;
 }
