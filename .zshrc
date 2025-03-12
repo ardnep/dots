@@ -6,6 +6,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$HOME/Library/Android/sdk/tools/bin"
+export PATH="/home/ardnep/.mozbuild/git-cinnabar:$PATH"
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 export XKB_DEFAULT_OPTIONS=caps:escape
 source '/usr/share/nvm/init-nvm.sh'
 
